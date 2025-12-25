@@ -1,0 +1,309 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  transition: background 0.5s, color 0.5s;
+}
+
+:root {
+  --bg-color: #f2f2f2;
+  --accent-color: #d32f2f;
+  --btn-bg: #d32f2f;
+  --btn-color: #fff;
+}
+
+body[data-theme="christmas-red"] {
+  --bg-color: #fef6f6;
+  --accent-color: #d32f2f;
+  --btn-bg: #d32f2f;
+  --btn-color: #fff;
+}
+
+body[data-theme="snow-white"] {
+  --bg-color: #ffffff;
+  --accent-color: #90caf9;
+  --btn-bg: #90caf9;
+  --btn-color: #000;
+}
+
+body[data-theme="emerald-green"] {
+  --bg-color: #e8f5e9;
+  --accent-color: #388e3c;
+  --btn-bg: #388e3c;
+  --btn-color: #fff;
+}
+
+body[data-theme="midnight-blue"] {
+  --bg-color: #0d1b2a;
+  --accent-color: #ffc107;
+  --btn-bg: #ffc107;
+  --btn-color: #000;
+}
+
+#theme-switcher {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  z-index: 1000;
+  transition: transform 0.3s;
+}
+#theme-switcher:hover {
+  transform: scale(1.1);
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+.hero h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  margin: 0.5rem 0;
+  text-shadow: 0 0 10px var(--accent-color);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero button {
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.hero button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; left: -100%;
+  background: rgba(255,255,255,0.3);
+  transition: left 0.3s;
+}
+.hero button:hover::after {
+  left: 0;
+}
+.hero button:hover {
+  transform: scale(1.05);
+}
+
+.snow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.countdown {
+  padding: 4rem 1rem;
+  text-align: center;
+  background: var(--bg-color);
+  color: var(--accent-color);
+}
+
+.countdown h2 {
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.countdown-cards {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 15px;
+  min-width: 80px;
+  flex: 1 1 80px;
+  transition: transform 0.3s;
+  text-align: center;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card span {
+  font-size: 1.8rem;
+  display: block;
+}
+
+.card small {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.message-form {
+  padding: 4rem 1rem;
+  text-align: center;
+  background: var(--bg-color);
+}
+
+.message-form h2 {
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 2rem;
+  color: var(--accent-color);
+  font-size: 2rem;
+}
+
+.message-form form {
+  max-width: 350px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.message-form input,
+.message-form textarea {
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.message-form button {
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  border: none;
+  padding: 0.8rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.message-form button:hover {
+  transform: scale(1.05);
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  background: var(--bg-color);
+  padding: 3rem 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  transform: scale(0.5);
+  opacity: 0;
+  transition: all 0.4s;
+  width: 100%;
+  max-width: 400px;
+}
+.modal.show .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.santa-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#closeModal {
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s;
+  width: 100%;
+  max-width: 200px;
+}
+#closeModal:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background: var(--accent-color);
+  color: var(--btn-color);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+footer .socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+footer .socials a {
+  color: var(--btn-color);
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+footer .socials a:hover {
+  color: #fff;
+}
+
+@media(max-width: 1024px){
+  .hero h1 { font-size: 2.8rem; }
+  .countdown h2 { font-size: 1.8rem; }
+}
+
+@media(max-width: 768px){
+  .hero h1 { font-size: 2.5rem; }
+  .hero p { font-size: 1.1rem; }
+  .countdown-cards { flex-direction: column; gap: 1rem; }
+  .message-form h2 { font-size: 1.8rem; }
+}
+
+@media(max-width: 480px){
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+  .hero button { font-size: 0.9rem; padding: 0.7rem 1.2rem; }
+  .card span { font-size: 1.5rem; }
+  .card small { font-size: 0.8rem; }
+  .message-form h2 { font-size: 1.5rem; }
+  .message-form button { font-size: 0.9rem; padding: 0.7rem; }
+  #closeModal { font-size: 0.9rem; padding: 0.7rem; }
+  footer .socials a { font-size: 1.5rem; }
+}

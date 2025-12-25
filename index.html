@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christmas Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="theme-switcher" aria-label="Switch Theme">🎨</button>
+
+  <header class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Merry Christmas 🎄</h1>
+      <p>Wishing you joy, peace, and plenty of code this holiday season.</p>
+      <button id="scrollToForm">Send a Message to Santa 🎅</button>
+    </div>
+    <div class="snow"></div>
+  </header>
+
+  <section class="countdown">
+    <h2>Countdown to 2026 🎉</h2>
+    <div class="countdown-cards">
+      <div class="card"><span id="days">0</span><small>Days</small></div>
+      <div class="card"><span id="hours">0</span><small>Hours</small></div>
+      <div class="card"><span id="minutes">0</span><small>Minutes</small></div>
+      <div class="card"><span id="seconds">0</span><small>Seconds</small></div>
+    </div>
+    <p id="newYearMsg"></p>
+  </section>
+
+  <section class="message-form" id="message-form">
+    <h2>Send Santa a Message 🎅🎁</h2>
+    <form id="santaForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <div class="santa-icon">🎅</div>
+      <p id="modal-msg">Ho ho ho! 🎄 I’ve received your message!</p>
+      <button id="closeModal">Back to Page</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>Made with ❤️ by Emmanuel</p>
+    <div class="socials">
+      <a href="https://www.tiktok.com/@debugger_matrix?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://youtube.com/@matrix_ai_16?si=crjFXc_J5dHbCRSV" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://github.com/Emmanuelkorede" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
