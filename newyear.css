@@ -1,0 +1,166 @@
+:root {
+    --accent: #ff4d4d;
+    --bg-dark: #0f172a;
+    --bg-light: #020617;
+    --text-main: #e5e7eb;
+    --text-muted: #cbd5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg-light));
+    color: var(--text-main);
+    scroll-behavior: smooth;
+}
+
+/* ===== COLOR PICKER ===== */
+.color-picker-wrapper {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+}
+
+#colorpicker {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.theme-switcher {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    background: var(--accent);
+    box-shadow: 0 0 15px color-mix(in srgb, var(--accent), transparent 50%);
+}
+
+/* ===== LAYOUT ===== */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* ===== HERO ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-texts {
+    margin: auto;
+}
+
+.t-greet {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: var(--accent);
+}
+
+.year-display {
+    font-size: clamp(5rem, 12vw, 9rem);
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-shadow: 0 0 40px color-mix(in srgb, var(--accent), transparent 70%);
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: auto;
+}
+
+/* ===== GREETINGS ===== */
+.greetings {
+    padding: 5rem 0;
+}
+
+.greetings-container {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 16px;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.greetings-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.greetings-container p {
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* ===== BUTTON ===== */
+.l-celebation {
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background: var(--accent);
+    color: #000;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.l-celebation:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px color-mix(in srgb, var(--accent), transparent 50%);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    padding: 2rem 0;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.socials-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 0.8rem;
+}
+
+.socials-icons a {
+    font-size: 1.6rem;
+    color: var(--text-muted);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.socials-icons a:hover {
+    color: var(--accent);
+    transform: translateY(-3px);
+}
+
+
+#fireworks {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+}
