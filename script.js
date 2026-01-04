@@ -1,4 +1,3 @@
-/* === AUTO REDIRECT TO NEW YEAR PAGE === */
 const now = new Date();
 const newYear = new Date("Jan 1, 2026 00:00:00");
 
@@ -10,7 +9,6 @@ if (now >= newYear) {
 
 
 
-/* === THEME SWITCHER === */
 const themes = ["christmas-red", "snow-white", "emerald-green", "midnight-blue"];
 let currentThemeIndex = 0;
 

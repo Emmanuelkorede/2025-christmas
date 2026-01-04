@@ -5,6 +5,8 @@ colorInput.addEventListener('input', (e) => {
         '--accent',
         e.target.value
     );
+
+    colorInput.blur();
 });
 
 
